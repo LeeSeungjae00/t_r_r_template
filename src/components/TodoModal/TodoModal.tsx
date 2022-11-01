@@ -34,7 +34,11 @@ const TodoModal = ({
 
   return (
     <>
-      <div className="TodoModal-Overlay" onClick={onCloseModal}></div>
+      <div
+        className="TodoModal-Overlay"
+        role={"Overlay"}
+        onClick={onCloseModal}
+      ></div>
       <div className="TodoModal">
         <div className="TodoModal-Title">
           <div>Todo 수정하기</div>
