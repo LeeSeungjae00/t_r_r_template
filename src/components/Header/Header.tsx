@@ -5,7 +5,7 @@ import './Header.scss';
 
 export default function Header() {
   return (
-    <header>
+    <header className="header">
       <Link to={ROUTE_HOME}>HOME</Link>
       <Link to={ROUTE_FORM_TEST}>FORM TEST</Link>
     </header>
