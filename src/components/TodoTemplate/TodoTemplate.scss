@@ -7,4 +7,13 @@
   display: -webkit-flex;
   justify-content: center;
   flex-direction: column;
+
+  &-Contents {
+    margin: auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    align-items: center;
+  }
 }

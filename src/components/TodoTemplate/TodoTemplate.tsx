@@ -2,13 +2,15 @@
 import React from 'react';
 import './TodoTemplate.scss';
 import Header from 'components/Header';
-import TodoContents from 'components/TodoContents';
+import RouterConfig from 'router/RouterConfig';
 
 const TodoTemplate = (): JSX.Element => {
   return (
     <div className="TodoTemplate">
       <Header></Header>
-      <TodoContents></TodoContents>
+      <div className="TodoTemplate-Contents">
+        <RouterConfig></RouterConfig>
+      </div>
     </div>
   );
 };
