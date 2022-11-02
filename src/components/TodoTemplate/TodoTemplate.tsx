@@ -1,18 +1,14 @@
 // TodoTemplate.tsx
-import React from "react";
-import "./TodoTemplate.scss";
-import TodoInput from "components/TodoInput";
-import TodoList from "components/TodoList";
-import TodoTitle from "components/TodoTitle";
+import React from 'react';
+import './TodoTemplate.scss';
+import Header from 'components/Header';
+import TodoContents from 'components/TodoContents';
 
 const TodoTemplate = (): JSX.Element => {
   return (
     <div className="TodoTemplate">
-      <div className="TodoTemplate-Contents">
-        <TodoTitle />
-        <TodoList />
-        <TodoInput />
-      </div>
+      <Header></Header>
+      <TodoContents></TodoContents>
     </div>
   );
 };
