@@ -1,14 +1,9 @@
 //src/hooks/queries/useKioskData.js
-import {
-  useQuery,
-  useInfiniteQuery,
-  QueryKey,
-  UseQueryOptions,
-} from "react-query";
-import * as QUERY_KEY from "constant/queryKeys";
-import { AxiosError, AxiosResponse } from "axios";
-import { EX } from "interfaces/EX";
-import { exGet } from "api/exApi";
+import { useQuery, useInfiniteQuery, QueryKey, UseQueryOptions } from 'react-query';
+import * as QUERY_KEY from 'constant/queryKeys';
+import { AxiosError, AxiosResponse } from 'axios';
+import { EX } from 'interfaces/EX';
+import { exGet } from 'api/exApi';
 
 export function useQueryHookEx({
   storeCode,
