@@ -15,13 +15,12 @@ describe('TodoModal', () => {
   // })
 
   describe('모달 동작 기능 TEST', () => {
-    let modifyContents = 'TEST'
     let setIsModal;
     let overlay
     beforeEach(() => {
       setIsModal = jest.fn()
       render(<TodoModal setIsModal={setIsModal}></TodoModal>)
-      overlay = screen.getByRole('Overlay')
+      overlay = screen.getByTitle('overlay')
     })
 
     it('모달 밖의 TodoModal-Overlay 를 클릭했을 때 onCloseModal 이 호출되는지', () => {

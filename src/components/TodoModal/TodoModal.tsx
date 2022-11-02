@@ -1,11 +1,6 @@
-import React, {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useCallback,
-} from "react";
-import { FaPen } from "react-icons/fa";
-import "./TodoModal.scss";
+import React, { ChangeEvent, Dispatch, SetStateAction, useCallback } from 'react';
+import { FaPen } from 'react-icons/fa';
+import './TodoModal.scss';
 
 interface PropTypes {
   setIsModal: Dispatch<SetStateAction<boolean>>;
@@ -14,12 +9,7 @@ interface PropTypes {
   onModifyTodo: () => void;
 }
 
-const TodoModal = ({
-  setIsModal,
-  modifyContents,
-  setModifyContents,
-  onModifyTodo,
-}: PropTypes): JSX.Element => {
+const TodoModal = ({ setIsModal, modifyContents, setModifyContents, onModifyTodo }: PropTypes): JSX.Element => {
   const onCloseModal = useCallback((): void => {
     setIsModal(false);
   }, [setIsModal]);
@@ -29,16 +19,12 @@ const TodoModal = ({
       const { value } = e.target;
       setModifyContents(value);
     },
-    [setModifyContents]
+    [setModifyContents],
   );
 
   return (
     <>
-      <div
-        className="TodoModal-Overlay"
-        role={"Overlay"}
-        onClick={onCloseModal}
-      ></div>
+      <div className="TodoModal-Overlay" title="overlay" onClick={onCloseModal}></div>
       <div className="TodoModal">
         <div className="TodoModal-Title">
           <div>Todo 수정하기</div>
@@ -46,13 +32,7 @@ const TodoModal = ({
         </div>
 
         <div className="TodoModal-Contents">
-          <input
-            type="text"
-            className="TodoModal-Contents-Input"
-            value={modifyContents}
-            onChange={onChange}
-            placeholder="Todo 입력"
-          />
+          <input type="text" className="TodoModal-Contents-Input" value={modifyContents} onChange={onChange} placeholder="Todo 입력" />
 
           <button className="TodoModal-Contents-Button" onClick={onModifyTodo}>
             수정하기
