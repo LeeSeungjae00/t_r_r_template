@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "mock data1",
+      "body": "123"
+    },
+    {
+      "id": 2,
+      "title": "mock data2",
+      "body": "123123123"
+    },
+    {
+      "id": 3,
+      "title": "mock data3",
+      "body": "123123"
+    }
+  ]
+}
