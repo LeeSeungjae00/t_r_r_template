@@ -9,7 +9,7 @@ export default function useAddTodoMutation(): UseMutationResult<
   AxiosError,
   EX
 > {
-  return useMutation(exPost, {
+  return useMutation(() => exPost({exp : "121"}), {
     onSuccess: (data) => {
       console.log(data); // mutation 이 성공하면 response를 받을 수 있다.
     },
