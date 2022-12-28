@@ -10,3 +10,4 @@
    3. React-query
 6. react-hook-form
 7. react-router-dom
+8. 에러 및 로딩 선언적으로 처리하기 (react-query + suspense, ErrorBoundary)
