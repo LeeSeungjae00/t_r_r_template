@@ -11,6 +11,7 @@ interface Props {
   children?: ReactNode;
   renderFallback: RenderFallbackType;
   resetKeys: unknown[];
+  onReset?: () => void;
 }
 
 interface State {
@@ -36,6 +37,7 @@ class ErrorBoundary extends Component<Props, State> {
   resetErrorBoundary = () => {
     // ErrorBoundary state를 초기화
     this.setState({ ...initialState });
+    this.props.onReset && this.props.onReset();
   };
 
   componentDidUpdate(prevProps: Props) {

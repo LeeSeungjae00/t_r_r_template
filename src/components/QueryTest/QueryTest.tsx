@@ -4,20 +4,22 @@ import { useQueryErrorResetBoundary } from 'react-query';
 import MockList from './components/MockList/MockList';
 
 export default function QueryTest() {
-  const { reset: resetQery } = useQueryErrorResetBoundary();
+  const { reset } = useQueryErrorResetBoundary();
   return (
     <div>
       {/* 로딩 상태인지 판단 불필요 */}
       <Suspense fallback={<>loading!!!</>}>
         <ErrorBoundary
           resetKeys={[]}
+          onReset={() => {
+            reset();
+          }}
           renderFallback={({ error, reset }) => {
             return (
               <>
                 error 발생!!({error.message})
                 <button
                   onClick={e => {
-                    resetQery();
                     reset();
                   }}
                 >
