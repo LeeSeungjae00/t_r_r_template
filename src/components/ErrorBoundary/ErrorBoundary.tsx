@@ -10,7 +10,7 @@ type RenderFallbackType = <ErrorType extends Error>(props: RenderFallbackProps<E
 interface Props {
   children?: ReactNode;
   renderFallback: RenderFallbackType;
-  resetKeys: unknown[];
+  resetKeys?: unknown[];
   onReset?: () => void;
 }
 
@@ -25,12 +25,10 @@ const initialState = {
 class ErrorBoundary extends Component<Props, State> {
   public state: State = { ...initialState };
 
-  public static getDerivedStateFromError(_: Error): State {
-    // Update state so the next render will show the fallback UI.
-    return { error: _ };
-  }
-
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    this.setState({
+      error,
+    });
     console.error('Uncaught error:', error, errorInfo);
   }
 
@@ -44,7 +42,7 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.error == null) {
       return;
     }
-    if (JSON.stringify(prevProps.resetKeys) === JSON.stringify(this.props.resetKeys)) {
+    if (this.props.resetKeys && JSON.stringify(prevProps.resetKeys) === JSON.stringify(this.props.resetKeys)) {
       this.resetErrorBoundary();
       // Trigger Reset
     }
